@@ -6,15 +6,15 @@
 <img src="img/Corgi.jpeg" alt="Cute Dog" />
 
 <section class="articles">
-  <h2 class="articles__heading">Latest Posts</h2>
+  <h2 class="articles__heading">Latest Tasks!</h2>
 
-  <!--Posts-->
+  <!--Tasks-->
   <ul class="articles-ul">
     <% data.forEach(post => { %>
       <li>
         <a href="/post/<%= post.id %>">
           <span><%= post.title %></span>
-          <span class="article-list__date"><%= post.date %>
+          <span class="articles-list__date"><%= post.date %>
           <% post.createdAt.toDateString() %>
           </span>
         </a>
