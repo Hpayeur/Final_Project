@@ -52,7 +52,7 @@ router.post("/add-task", authMiddleware, async (req, res) => {
 });
 
 //Update Task
-router.get("/updateTask/:id", authMiddleware, async (req, res) => {
+router.get("/edit-task/:id", authMiddleware, async (req, res) => {
   try {
     const locals = {
       title: "Updates a Task",
