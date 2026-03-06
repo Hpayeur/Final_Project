@@ -9,7 +9,7 @@ const adminLayout = "../views/layouts/admin";
 
 const authMiddleware = (req, res, next) => {
   try {
-    const token = req.cookies.token;
+    const { token } = req.cookies;
 
     if (!token) {
       return res.status(401).json({ message: "Unauthorized" });
@@ -118,8 +118,10 @@ router.post("/add-task", authMiddleware, async (req, res) => {
     console.log(req.body);
     try {
       const newTask = new Task({
-        title: req.body.title,
-        body: req.body.body,
+        name: req.body.name,
+        dogBreed: req.body.dogBreed,
+        age: req.body.age,
+        task: req.body.task,
       });
       await Task.create(newTask);
       res.redirect("/dashboard");
