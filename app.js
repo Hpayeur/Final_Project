@@ -2,6 +2,7 @@ const dns = require("node:dns");
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 const servers = dns.getServers();
 console.log("Node.js is using these DNS servers:", servers);
+const expressLayouts = require("express-ejs-layouts");
 
 require("dotenv").config();
 
@@ -15,6 +16,7 @@ connectDB();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(expressLayouts);
 app.use(express.static("public"));
 app.set("layout", "./layouts/main");
 app.set("view engine", "ejs");
