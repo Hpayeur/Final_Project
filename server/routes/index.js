@@ -55,28 +55,4 @@ router.get("/task/:id", async (req, res) => {
     console.log(error);
   }
 });
-
-//Search For Task
-
-router.post("/search", async (req, res) => {
-  try {
-    const locals = {
-      title: "Search",
-      description: "A blog template made with NodeJs and ExpressJs.",
-    };
-    let searchTerm = req.body.SearchTerm;
-    const searchNoSpecialChar = searchTerm.replace(/[^a-zA-Z ]/g, "");
-
-    const data = await Post.find({
-      $or: [
-        { title: { $regex: new RegExp(searchNoSpecialChar, "i") } },
-        { body: { $regex: new RegExp(searchNoSpecialChar, "i") } },
-      ],
-    });
-    res.render("search", { locals, data });
-  } catch (error) {
-    console.log(error);
-  }
-});
-
 module.exports = router;
