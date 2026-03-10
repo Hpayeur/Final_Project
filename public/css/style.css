@@ -34,6 +34,31 @@ h3 {
   padding: 10px;
 }
 
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select,
+textarea {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.admin-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.admin-post-control {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .btn {
   color: #123456;
   background-color: #654321;
@@ -48,6 +73,16 @@ h3 {
   text-decoration: underline;
   color: #111111;
   background-color: #f0f0f0;
+}
+
+.btn-add {
+  color: #f0f0f0;
+  background-color: #00ff00;
+  border: 2px solid #00ff00;
+  border-radius: 5px;
+  font-family: cursive;
+  padding: 16px 32px;
+  margin: 4px 2px;
 }
 
 .btn-delete {
@@ -146,6 +181,8 @@ h3 {
   font-size: var(--font-size-md);
   margin: 5px 0 40px 0;
 }
+.main__heading {
+}
 
 .articles__heading {
   margin-top: 4rem;
@@ -212,6 +249,32 @@ h3 {
 
 .articles {
   white-space: pre-wrap;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.search__form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#input-search {
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  border: 2px solid var(--gray);
+  border-radius: 5px;
+}
+
+#searchClose {
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  border: 2px solid var(--gray);
+  border-radius: 5px;
+  background-color: transparent;
 }
 
 .footer {

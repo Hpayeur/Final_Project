@@ -1,6 +1,6 @@
 <div class="admin-title">
   <h2>Tasks</h2>
-  <a href="/add-task" class="button"> + Add New Task</a>
+  <a href="/add-task" class="btn-add"> + Add New Task</a>
 </div>
 <ul class="admin-posts"></ul>
 <% data.forEach(task => { %>
@@ -10,7 +10,7 @@
   <div class="admin-post-control">
     <a href="/edit-task/<%= task._id %>" class="btn">Edit</a>
     <form action="/delete-task/<%= task._id %>?_method=DELETE" method="post">
-<input type="submit" value="Delete" class="btn-delete btn"/>
+<input type="submit" value="Delete" class="btn-delete"/>
     </form>
   </div>
 </li>
