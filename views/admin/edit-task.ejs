@@ -2,12 +2,12 @@
 <div class="admin-title">
   <h2>View / Edit Task</h2>
 
-  <form action="/delete-task/<%= data._id %>?_method=DELETE" method="POST">
+  <form action="/delete-task/<%= data._id %>?_method=DELETE" method="DELETE">
     <input type="submit" value="Delete" class="btn-delete btn" />
   </form>
 </div>
 
-<form action="/edit-task/<% data._id %>?_method=PUT" method="POST">
+<form action="/edit-task/<%= data._id %>?_method=PUT" method="POST">
   <label for="name"><b>Name</b></label>
   <input type="text" placeholder="" name="name" value="<%= data.name %>" />
   <label for="dogBreed"><b>Dog Breed</b></label>

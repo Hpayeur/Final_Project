@@ -4,12 +4,13 @@ const servers = dns.getServers();
 console.log("Node.js is using these DNS servers:", servers);
 const expressLayouts = require("express-ejs-layouts");
 const cookieParser = require("cookie-parser");
+const methodOverride = require("method-override");
 
 require("dotenv").config();
 
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3000;
 
 const connectDB = require("./server/config/db");
 connectDB();
@@ -17,6 +18,7 @@ connectDB();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+app.use(methodOverride("_method"));
 
 app.use(expressLayouts);
 app.use(express.static("public"));
