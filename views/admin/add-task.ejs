@@ -3,9 +3,13 @@
   <h2>Add New Task</h2>
 </div>
 <form action="/add-task/" method="POST">
-  <label for="title"><b>Title</b></label>
-  <input type="text" placeholder="Task Title" name="title" />
-  <label for="body"><b>Content</b></label>
-  <textarea name="body" cols="50" rows="10"></textarea>
+  <label for="name"><b>Name</b></label>
+  <input type="text" placeholder="Dog's Name" name="name" />
+  <label for="dogBreed"><b>Dog Breed</b></label>
+  <input type="text" placeholder="Dog Breed" name="dogBreed" />
+  <label for="age"><b>Age</b></label>
+  <input type="number" min="0" max="31" placeholder="Dog's Age" name="age" />
+  <label for="task"><b>What's the task?</b></label>
+  <textarea name="task" cols="50" rows="10"></textarea>
   <input type="submit" value="Add" class="btn" />
 </form>

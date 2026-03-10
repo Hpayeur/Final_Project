@@ -151,8 +151,10 @@ router.get("/edit-task/:id", authMiddleware, async (req, res) => {
 router.put("/edit-task/:id", authMiddleware, async (req, res) => {
   try {
     await Task.findByIdAndUpdate(req.params.id, {
-      title: req.body.title,
-      body: req.body.body,
+      name: req.body.name,
+      dogBreed: req.body.dogBreed,
+      age: req.body.age,
+      task: req.body.task,
       updatedAt: Date.now(),
     });
     res.redirect("/dashboard");

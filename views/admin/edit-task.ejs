@@ -8,16 +8,26 @@
 </div>
 
 <form action="/edit-task/<% data._id %>?_method=PUT" method="POST">
-  <label for="title"><b>Title</b></label>
+  <label for="name"><b>Name</b></label>
+  <input type="text" placeholder="" name="name" value="<%= data.name %>" />
+  <label for="dogBreed"><b>Dog Breed</b></label>
   <input
     type="text"
-    placeholder="Post Title"
-    name="title"
-    value="<%= data.title %>"
+    placeholder=""
+    name="dogBreed"
+    value="<%= data.dogBreed %>"
   />
-
-  <label for="body"><b>Content</b></label>
-  <textarea name="body" cols="50" rows="10"><%= data.body %></textarea>
+  <label for="age"><b>Age</b></label>
+  <input
+    type="number"
+    min="0"
+    max="31"
+    placeholder=""
+    name="age"
+    value="<%= data.age %>"
+  />
+  <label for="task"><b>What's the task?</b></label>
+  <textarea name="task" cols="50" rows="10"><%= data.task %></textarea>
 
   <input type="submit" value="Update" class="btn" />
 </form>
